@@ -11,6 +11,14 @@
 ### I have included 2 extra codes where in one i've just experimentally revised the data handling using csv and the another is where ive shows my actual thought process using excessive live comments in the code itself
 ### I have also included 3 pictures of very initial thought process of how i came upon the decision of using this particular model and not any other regression or ml model.
 
+after completely training the model i couldnt resist the urge to make a mapping to visualise the model decision upon which it was trained the dataset
+later i learned that it was called decision boundary where the decision changes 
+as X axis i have taken the age from 1 to 100 and y axis is the salary of 4 lakh max approx to only consider under 50 LPA customers to reduce errors in the dataset
+later i also implemeted more filters using if statements and more methods to clean the dataset to make the decision better and better 
+### RED : did not buy the TV , BLUE : bought the TV
+![DECISIONBOUNDARYMAP](decision_boundary.png)
+### module used to make this heatmap or decision boundary : pillow ( did not choose to use matplotlib due to personal preference)
+
 # thought process images:
 
 ![1](thoughtprocess1.jpg)
