@@ -19,6 +19,8 @@ later i also implemeted more filters using if statements and more methods to cle
 ![DECISIONBOUNDARYMAP](decision_boundary.png)
 ### module used to make this heatmap or decision boundary : pillow ( did not choose to use matplotlib due to personal preference)
 
+
+### I would suggest to not rely on the given handwritten thought process because it was very inital and the more indepth ones are written in the code file itself
 # thought process images:
 
 ![1](thoughtprocess1.jpg)
