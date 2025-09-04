@@ -8,7 +8,7 @@
 
 ## modules to be installed using : `pip install scikit-learn`
 
-### I have included 2 extra codes where in one i've just experimentally revised the data handling using csv and the another is where ive shown my actual thought process using excessive live comments in the code itself to avoid it , there is a clean version present as finalcleanpredictor.py
+### I have included 2 extra codes where in one i've just experimentally revised the data handling using csv and the another is where ive shows my actual thought process using excessive live comments in the code itself
 ### I have also included 3 pictures of very initial thought process of how i came upon the decision of using this particular model and not any other regression or ml model.
 
 # thought process images:
@@ -16,3 +16,5 @@
 ![1](thoughtprocess1.jpg)
 ![2](thoughtprocess2.jpg)
 ![3](thoughtprocess3.jpg)
+
+### Sorry for inconveniences cause by handwriting as this is a very rough blueprint for my own use during the making of this, but stil uploaded it as its very important to show the decision tree of how someone would come to choose the right model , in AIML , its all about choosing the right tools and right approach mostly
