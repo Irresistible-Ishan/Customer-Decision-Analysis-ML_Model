@@ -26,16 +26,45 @@ for i in datasethold:
         output = int(output)
       except ValueError:
         continue
+      #i removed cases where age is very high but salary is very low
+      if age > 80 and salary < 20000:
+         continue
+      # remove cases where age < 10 but salary is very high
+      if age < 10 and salary > 100000:
+         continue
+      if not (0 < age < 120): # not considering customers above 120
+         continue
+      if not (0 < salary < 416000): 
+         continue  # not considering customers above 50LPA (haha)
       x.append([age , salary])
       y.append(output)
 
 trainedmodel = mlmodel.fit(x,y)
 
 
+# i knew models trained are always stored in a file 
+# since i used to use .safetensors for image generation AIs
+# i search and found the .pkl that can be used for this
+# and i was familiar with binary files handling using pillow so ill save the 
+# as a file so i can use it in the decision boundary
+import pickle
+file = open("trainedmodel.pkl" , "wb")
+pickle.dump(trainedmodel , file)
+file.close()
+print("Model file updated and stored!")
+
+
+
 # to make it like a program
 while True:
    param = input("\nPlease enter the 'age salary' of the customer : ")
    age , salary = float(param.split(" ")[0]), float(param.split(" ")[1])
+   if not (0 < age < 120):
+      print("Please enter a valid age below 120 and above 0")
+      continue
+   if not (0 < salary < 416000):
+      print("customers above 50LPA are not considered as they are unpredictable and will most likely buy the TV on need")
+      continue
    prediction = bool(trainedmodel.predict([[age,salary]]))
    if prediction:
       print("Yes the probability of this customer purchasing the TV is HIGH")
@@ -80,5 +109,11 @@ so by this we know model isnt biased towards the money only
 but also considers age 
 i think this much test cases are satisfactory !!!!
 
+i was wrong about the above..... this is not satisfactory 
+after analysing the decision boundary.....
+
 
 """
+
+
+

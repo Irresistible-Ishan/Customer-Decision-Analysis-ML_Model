@@ -91,6 +91,16 @@ for i in datasethold:
         output = int(output)
       except ValueError:
         continue
+      # i removed cases where age is very high but salary is very low
+      if age > 80 and salary < 20000:
+         continue
+      # remove cases where age < 10 but salary is very high
+      if age < 10 and salary > 100000:
+         continue
+      if not (0 < age < 120): # not considering customers above 120
+         continue
+      if not (0 < salary < 416000): 
+         continue  # not considering customers above 50LPA (haha)
       x.append([age , salary])
       y.append(output)
 
@@ -119,4 +129,14 @@ print(trainedmodel.predict([[40 , 90000000]]))
 
 
 # i think this works so well 
-print(trainedmodel.predict([[]]))
+#print(trainedmodel.predict([[]]))
+
+
+
+
+# i was happy with the model trained until i realised this problem was way harder
+# than i had thought which means after making decision_boundary.png 
+# i came to realise even at 100 salary someone at age 100 will buy a tv 
+# this is because of a few wrong inputs in the database itself that 
+# i needed to still filter
+
